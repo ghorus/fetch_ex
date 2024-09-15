@@ -18,7 +18,14 @@ The challenges faced during production were: being new to Kotlin, Android Studio
 ### Approach
 - To fetch API and display on mobile, a successful connection needs to be established using the *"URL"* module and show it on the UI(User interface) via an adapter. This adapter will bind the extracted data, which has been sorted as requested, with the UI.
 - The chosen form of display is the *RecyclerView*
-- For the additional features, such as searching, we use logic to update the same *RecyclerView*.
+- For the additional features, such as searching, we use logic to update the same *RecyclerView*. As for the dark/light mode, we rely on the lines like:
+
+*AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)*
+
+And with the font size change feature the primary line is:
+
+*val currentSize = view.textSize / resources.displayMetrics.scaledDensity*
+            *view.textSize = currentSize + decreaseBy*
 
 ### Result
 - All features worked as [intended](https://imgur.com/a/NQQWLh7) (Font size change, Dark/Light mode, Search)
